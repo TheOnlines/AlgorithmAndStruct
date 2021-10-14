@@ -4,15 +4,16 @@
 #ifndef ALGORITHM_LINKTABLE_H
 #define ALGORITHM_LINKTABLE_H
 typedef int BASE;
-typedef struct linkedList *pLikedList;
+typedef struct singleLinkedList *pLikedList;
 
-struct linkedList {
+struct singleLinkedList {
     BASE value;
     pLikedList next;
 };
 
-
 void createSingleLikedList(pLikedList list, int length);
+
+void createDoubleLikedList(pLikedList list, int length);
 
 void show(pLikedList list);
 

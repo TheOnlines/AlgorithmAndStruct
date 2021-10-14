@@ -2,7 +2,7 @@
 // Created by zhaowei on 2021/10/13.
 //
 
-#include "linkedList.h"
+#include "singleLinkedList.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -17,7 +17,7 @@ void createSingleLikedList(pLikedList list, int length) {
     while (step < length) {
         step++;
 
-        pLikedList linklist = (pLikedList) malloc(sizeof(struct linkedList));
+        pLikedList linklist = (pLikedList) malloc(sizeof(struct singleLinkedList));
         linklist->value = step;
         linklist->next = NULL;
 
