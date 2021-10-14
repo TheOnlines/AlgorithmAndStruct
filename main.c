@@ -5,12 +5,14 @@
 
 int main() {
 
-    pLikedList list = (pLikedList) malloc(sizeof(struct singleLinkedList));
+    dLikedList list = (dLikedList) malloc(sizeof(struct doubleLinkedList));
+    list->prev = NULL;
     list->value = 0;
     list->next = NULL;
 
-    createSingleLikedList(list, 10);
-    show(list);
+    createDoubleLikedList(list, 10);
+
+    dshow(list);
 
     return 0;
 }

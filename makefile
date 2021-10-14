@@ -1,7 +1,10 @@
 CC = gcc
 
-main:library/Builder/linkedList.o
-	$(CC) main.c library/Builder/linkedList.o -o main
+main:library/Builder/singleLinkedList.o library/Builder/doubleLinkedList.o
+	$(CC) main.c library/Builder/singleLinkedList.o library/Builder/doubleLinkedList.o -o main
 
-library/Builder/linkedList.o:library/LinkList/singleLinkedList.c library/LinkList/singleLinkedList.h
-	$(CC) -c library/LinkList/linkedList.c -o library/Builder/linkedList.o
+library/Builder/singleLinkedList.o:library/LinkList/singleLinkedList.c library/LinkList/singleLinkedList.h
+	$(CC) -c library/LinkList/singleLinkedList.c -o library/Builder/singleLinkedList.o
+
+library/Builder/doubleLinkedList.o:library/LinkList/doubleLinkedList.c library/LinkList/singleLinkedList.h
+	$(CC) -c library/LinkList/doubleLinkedList.c -o library/Builder/doubleLinkedList.o
