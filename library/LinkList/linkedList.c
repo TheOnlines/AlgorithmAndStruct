@@ -11,7 +11,7 @@
  * @param list
  * @param length
  */
-void createLikedList(pLikedList list,int length) {
+void createSingleLikedList(pLikedList list, int length) {
     int step = 0;
 
     while (step < length) {

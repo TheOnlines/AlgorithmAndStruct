@@ -11,7 +11,8 @@ struct linkedList {
     pLikedList next;
 };
 
-void createLikedList(pLikedList list,int length);
+
+void createSingleLikedList(pLikedList list, int length);
 
 void show(pLikedList list);
 

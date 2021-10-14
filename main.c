@@ -9,7 +9,7 @@ int main() {
     list->value = 0;
     list->next = NULL;
 
-    createLikedList(list, 10);
+    createSingleLikedList(list, 10);
     show(list);
 
     return 0;
