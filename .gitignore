@@ -1,4 +1,4 @@
-/library/Builder
+/library/Builder/*
 CMakeLists.txt
 .idea
 cmake-build-debug
