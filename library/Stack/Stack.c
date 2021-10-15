@@ -53,7 +53,7 @@ void popHead(StackPoint stack){
     }
 
     while (stack->head != NULL) {
-        printf("%d\n",stack->head->value);
+        printf("栈头出栈: %d\n",stack->head->value);
         nodeLink pNode = stack->head->next;
         free(stack->head);
         stack->head = pNode;
@@ -70,7 +70,7 @@ void popTail(StackPoint stack){
     }
 
     while (stack->tail!= NULL) {
-        printf("%d\n",stack->tail->value);
+        printf("栈尾出栈: %d\n",stack->tail->value);
         nodeLink pNode = stack->tail->prev;
         free(stack->tail);
         stack->tail = pNode;

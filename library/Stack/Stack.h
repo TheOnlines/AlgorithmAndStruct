@@ -26,4 +26,4 @@ void pushStack(StackPoint stack,BASE value);
 
 void popHead(StackPoint stack);
 void popTail(StackPoint stack);
-#endif //ALGORITHM_STACK_H
+#endif //ALGORITHM_STACK_H1
