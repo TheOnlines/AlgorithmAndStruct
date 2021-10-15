@@ -9,4 +9,5 @@ void bubble(int *list,int len);
 
 void showSorting(int *list, int len);
 
+void choice(int *list,int len);
 #endif //ALGORITHM_SORTINGALGORITHM_H
