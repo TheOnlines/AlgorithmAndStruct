@@ -42,6 +42,27 @@ void choice(int *list, int len) {
     }
 }
 
+/**
+ * 空间复杂度: 原地排序O(1)
+ * 时间复杂度: 最坏的情况是O(n)
+ * @param list
+ * @param len
+ */
+void insert(int *list, int len) {
+    for (int i = 1; i < len; ++i) {
+        int currentValue = list[i];
+        int prevK = i - 1;
+        for (; prevK >= 0; prevK--) {
+            if (list[prevK] > currentValue) {
+                list[prevK + 1] = list[prevK];
+            } else {
+                break;
+            }
+        }
+        list[prevK + 1] = currentValue;
+    }
+}
+
 void showSorting(int *list, int len) {
     for (int i = 0; i < len; ++i) {
         printf("%d\n", list[i]);

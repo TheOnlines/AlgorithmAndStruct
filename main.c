@@ -14,7 +14,7 @@ void popHeadTest();
 int main() {
     int list[] = {124, 23, 4123, 4, 124, 124, 12};
     size_t len = sizeof(list) / sizeof(int);
-    choice(list, len);
+    insert(list, len);
     showSorting(list, len);
 }
 
