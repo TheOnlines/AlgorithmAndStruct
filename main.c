@@ -18,10 +18,10 @@ int main() {
 }
 
 /**
- *  栈尾出栈
+ *  栈头出栈
  */
 void popHeadTest() {
-    
+
     StackPoint stack =  createStack();
 
     pushStack(stack,1);
