@@ -2,19 +2,20 @@
 
 #include "library/Stack/Stack.h"
 
+#include "library/SortingAlgorithm/SortingAlgorithm.h"
+
 void popTailTest();
 
 void popHead();
 
 void popHeadTest();
 
+
 int main() {
-
-    popTailTest();
-
-    popHeadTest();
-
-    return 0;
+    int list[] = {124, 23, 4123, 4, 124, 124, 12};
+    size_t len = sizeof(list) / sizeof(int);
+    bubble(list, len);
+    showSorting(list, len);
 }
 
 /**
