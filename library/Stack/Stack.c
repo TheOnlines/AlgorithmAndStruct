@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 /**
- *
+ * 创建栈
  * @return
  */
 StackPoint createStack() {
@@ -20,13 +20,14 @@ StackPoint createStack() {
 }
 
 /**
- *
+ * 放到栈尾
  * @param stack
  * @param value
  */
 void pushStack(StackPoint stack, BASE value) {
 
     nodeLink node = (nodeLink) malloc(sizeof(struct Node));
+    node->prev = NULL;
     node->value = value;
     node->next = NULL;
 
@@ -36,11 +37,16 @@ void pushStack(StackPoint stack, BASE value) {
         return;
     }
 
+    node->prev = stack->tail;
     stack->tail->next = node;
     stack->tail = node;
 }
 
-void pop(StackPoint stack){
+/**
+ * 栈顶
+ * @param stack
+ */
+void popHead(StackPoint stack){
 
     if (stack->head == NULL){
         return;
@@ -51,5 +57,22 @@ void pop(StackPoint stack){
         nodeLink pNode = stack->head->next;
         free(stack->head);
         stack->head = pNode;
+    }
+}
+
+/**
+ * 栈尾
+ * @param stack
+ */
+void popTail(StackPoint stack){
+    if (stack->tail == NULL){
+        return;
+    }
+
+    while (stack->tail!= NULL) {
+        printf("%d\n",stack->tail->value);
+        nodeLink pNode = stack->tail->prev;
+        free(stack->tail);
+        stack->tail = pNode;
     }
 }

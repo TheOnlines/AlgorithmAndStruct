@@ -10,6 +10,7 @@ typedef int BASE;
 typedef struct Node *nodeLink;
 
 struct Node {
+    nodeLink prev;
     BASE value;
     nodeLink next;
 };
@@ -23,6 +24,6 @@ StackPoint createStack();
 
 void pushStack(StackPoint stack,BASE value);
 
-void pop(StackPoint stack);
-
+void popHead(StackPoint stack);
+void popTail(StackPoint stack);
 #endif //ALGORITHM_STACK_H

@@ -13,7 +13,7 @@ int main() {
     pushStack(stack,3);
     pushStack(stack,4);
 
-    pop(stack);
+    popTail(stack);
 
     return 0;
 }
