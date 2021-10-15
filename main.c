@@ -13,8 +13,8 @@ void popHeadTest();
 
 int main() {
     int list[] = {124, 23, 4123, 4, 124, 124, 12};
-    size_t len = sizeof(list) / sizeof(int);
-    insert(list, len);
+    int len = sizeof(list) / sizeof(int);
+    quick(list, 0,len-1);
     showSorting(list, len);
 }
 

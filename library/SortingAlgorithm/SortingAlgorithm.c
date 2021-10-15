@@ -63,6 +63,38 @@ void insert(int *list, int len) {
     }
 }
 
+/**
+ *  快排
+ *  空间复杂度: O(1)
+ *  时间复杂度: O(nlog(n))
+ */
+void quick(int *list, int left, int right) {
+    if (left < right) {
+        int l = left, r = right, x = list[left];
+        while (l < r) {
+            while (l < r && x <= list[r]) {
+                r--;
+            }
+
+            if (l < r) {
+                list[l++] = list[r];
+            }
+
+            while (l < r && x > list[l]) {
+                l++;
+            }
+
+            if (l < r) {
+                list[r--] = list[l];
+            }
+        }
+
+        list[l] = x;
+        quick(list, left, l - 1);
+        quick(list, l + 1, right);
+    }
+}
+
 void showSorting(int *list, int len) {
     for (int i = 0; i < len; ++i) {
         printf("%d\n", list[i]);
