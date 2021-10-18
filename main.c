@@ -1,49 +1,14 @@
 #include <stdio.h>
-
-#include "library/Stack/Stack.h"
-
 #include "library/SortingAlgorithm/SortingAlgorithm.h"
 
-void popTailTest();
+int main()
+{
+    int a[10] = {5, 2, 6, 0, 3, 9, 1, 7, 4, 8};
 
-void popHead();
+    MerSort(a, 10);
 
-void popHeadTest();
-
-
-int main() {
-    int list[] = {124, 23, 4123, 4, 124, 124, 12};
-    int len = sizeof(list) / sizeof(int);
-    quick(list, 0,len-1);
-    showSorting(list, len);
-}
-
-/**
- *  栈头出栈
- */
-void popHeadTest() {
-
-    StackPoint stack =  createStack();
-
-    pushStack(stack,1);
-    pushStack(stack,2);
-    pushStack(stack,3);
-    pushStack(stack,4);
-
-    popHead(stack);
-}
-
-/**
- * 栈尾出栈
- */
-void popTailTest() {
-    StackPoint stack =  createStack();
-
-    pushStack(stack,1);
-    pushStack(stack,2);
-    pushStack(stack,3);
-    pushStack(stack,4);
-
-
-    popTail(stack);
+    for (int i = 0; i < 10; ++i) {
+        printf("%d\n",a[i]);
+    }
+    return 0;
 }
