@@ -146,3 +146,30 @@ void merging(int *left, int lLen, int *right, int rLen) {
         left[i] = temp[i];
     }
 }
+
+/**
+ *
+ * @param pInt
+ * @param len
+ * @param v
+ * @return
+ */
+int bSearch(const int pInt[], int len, int v) {
+
+    int start = 0;
+    int end = len-1;
+
+    while (start <= end) {
+        int middle = (start + end) / 2;
+
+        if (v == pInt[middle]) {
+            return middle;
+        } else if (v < pInt[middle]) {
+            end = middle - 1;
+        } else {
+            start = middle + 1;
+        }
+    }
+
+    return 0;
+}
