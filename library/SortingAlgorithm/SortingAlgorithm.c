@@ -93,54 +93,56 @@ void quick(int *list, int left, int right) {
         quick(list, left, l - 1);
         quick(list, l + 1, right);
     }
+
+
 }
 
+/**
+ * 归并排序
+ * @param list
+ * @param len
+ */
+void sortMerging(int list[], int len) {
+    if (len <= 1) return;
 
-void merging(int *left, int lLen, const int *right, int rLen) {
+    int *left = list;
 
-    int l = 0, r = 0, j = 0;
+    int lLen = len/2;
+
+    int *right = list+lLen;
+
+    int rLen = len-lLen;
+
+    sortMerging(left,lLen);
+
+    sortMerging(right,rLen);
+
+    merging(left,lLen,right,rLen);
+}
+
+void merging(int *left, int lLen, int *right, int rLen) {
+
+    int l=0,r=0,t=0;
 
     int temp[10];
 
-    while (l < lLen && r < rLen) {
-        if (left[l] < right[r]) {
-            temp[j++] = left[l++];
-        } else {
-            temp[j++] = right[r++];
+    while (l < lLen && r < rLen){
+        if (left[l] < right[r]){
+            temp[t++] = left[l++];
+        }else{
+            temp[t++] = right[r++];
         }
     }
 
     while (l < lLen){
-        temp[j++] = left[l++];
+        temp[t++] = left[l++];
     }
 
-    while (r < rLen){
-        temp[j++] = right[r++];
+    while(r < rLen){
+        temp[t++] = right[r++];
     }
 
-    for (int m = 0; m < (lLen+rLen); ++m) {
-        left[m] = temp[m];
-    }
-}
-
-void MerSort(int value[], int len) {
-    if (len > 1) {
-
-        int *left = value;
-        int lLen = len / 2;
-
-        int *right = value + lLen;
-        int rLen = len - lLen;
-
-        MerSort(left, lLen);
-        MerSort(right, rLen);
-
-        merging(left, lLen, right, rLen);
-    }
-}
-
-void showSorting(int *list, int len) {
-    for (int i = 0; i < len; ++i) {
-        printf("%d\n", list[i]);
+    for (int i = 0; i < lLen + rLen; ++i) {
+        left[i] = temp[i];
     }
 }

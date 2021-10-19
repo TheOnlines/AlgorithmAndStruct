@@ -13,7 +13,9 @@ void choice(int *list,int len);
 
 void insert(int *list,int len);
 
-void MerSort(int value[], int len);
-
 void quick(int *list, int left, int right);
+
+void sortMerging(int list[], int len);
+
+void merging(int *left, int lLen, int *right, int rLen);
 #endif //ALGORITHM_SORTINGALGORITHM_H
