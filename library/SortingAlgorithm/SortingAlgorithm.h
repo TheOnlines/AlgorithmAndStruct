@@ -21,4 +21,15 @@ void merging(int *left, int lLen, int *right, int rLen);
 
 int bSearch(const int pInt[], int len, int v);
 
+/**
+ * 终止条件 left > right. 当pInt[md] = value时.
+ * bSearchInternally(const int pInt[], int left, int right,int value) = bSearchInternally(const int pInt[], int left, int right,int value)
+ *
+ * @param pInt
+ * @param len
+ * @param v
+ * @return
+ */
+int bSearchInternally(const int pInt[], int left, int right,int value);
+
 #endif //ALGORITHM_SORTINGALGORITHM_H

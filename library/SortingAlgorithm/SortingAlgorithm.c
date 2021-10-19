@@ -173,3 +173,27 @@ int bSearch(const int pInt[], int len, int v) {
 
     return 0;
 }
+
+/**
+ * 二分递归
+ * @param pInt
+ * @param left
+ * @param right
+ * @param value
+ * @return
+ */
+int bSearchInternally(const int pInt[], int left, int right, int value) {
+    if (left > right) {
+        return 0;
+    }
+
+    int middle = (left + right) / 2;
+
+    if (pInt[middle] == value) {
+        return middle;
+    } else if (pInt[middle] > value) {
+        return bSearchInternally(pInt, left, middle - 1, value);
+    } else {
+        return bSearchInternally(pInt, middle + 1, right, value);
+    }
+}
