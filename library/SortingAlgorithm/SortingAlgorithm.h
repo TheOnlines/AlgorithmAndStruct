@@ -32,4 +32,12 @@ int bSearch(const int pInt[], int len, int v);
  */
 int bSearchInternally(const int pInt[], int left, int right,int value);
 
+
+int equalValuesAppearForTheFirstTime(int list[], int len, int val);
+
+int equalValuesAppearForTheLastTime(int list[], int len, int val);
+
+int gteValuesAppearForTheFirstTime(int list[], int len, int val);
+
+int lteValuesAppearForTheFirstTime(int *list, int len, int val);
 #endif //ALGORITHM_SORTINGALGORITHM_H

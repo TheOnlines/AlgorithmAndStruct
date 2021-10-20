@@ -197,3 +197,120 @@ int bSearchInternally(const int pInt[], int left, int right, int value) {
         return bSearchInternally(pInt, middle + 1, right, value);
     }
 }
+
+
+/**
+ * 二分法 数值重复的请求 -- 查找第一个小于等于给定值的key
+ * @param list
+ * @param len
+ * @param val
+ * @return
+ */
+int lteValuesAppearForTheFirstTime(int *list, int len, int val) {
+    int min =0,max = len - 1;
+
+    while (min <= max){
+
+        int middle = ((min +max)>>1);
+
+        if (list[middle] > val){
+            max = middle - 1;
+        }else{
+            if (middle == 0 || list[middle+1] > val){
+                return middle;
+            }else{
+                min = middle + 1;
+            }
+        }
+    }
+    return 0;
+}
+
+/**
+ * 二分法 数值重复的请求 -- 查找第一个大于等于给定值的key
+ * @param list
+ * @param len
+ * @param val
+ * @return
+ */
+int gteValuesAppearForTheFirstTime(int list[], int len, int val) {
+
+    int min = 0, max = len - 1;
+
+    while (min <= max) {
+
+        int middle = ((min + max) >> 1);
+
+        if (list[middle] >= val) {
+
+            if (middle == 0 || list[middle - 1] < val) {
+                return middle;
+            } else {
+                max = middle - 1;
+            }
+        } else {
+            min = middle + 1;
+        }
+    }
+
+    return 0;
+}
+
+/**
+ * 二分法 数值重复的请求 -- 最后出现查找值的key
+ * @param list
+ * @param len
+ * @param val
+ * @return
+ */
+int equalValuesAppearForTheLastTime(int list[], int len, int val) {
+
+    int max = len - 1, min = 0;
+
+    while (min <= max) {
+        int middle = ((max + min) >> 1);
+
+        if (list[middle] > val) {
+            max = middle - 1;
+        } else if (list[middle] < val) {
+            min = middle + 1;
+        } else {
+            if (middle == len - 1 || list[middle + 1] == val) {
+                min = middle + 1;
+            } else {
+                return middle;
+            }
+        }
+    }
+    return 0;
+}
+
+/**
+ * 二分法 数值重复的请求 -- 最先出现查找值的key
+ * @param list
+ * @param len
+ * @param val
+ * @return
+ */
+int equalValuesAppearForTheFirstTime(int list[], int len, int val) {
+
+    int max = len - 1, min = 0;
+
+    while (min <= max) {
+
+        int middle = ((max + min) >> 1);
+
+        if (list[middle] > val) {
+            max = middle - 1;
+        } else if (list[middle] < val) {
+            min = middle + 1;
+        } else {
+            if (middle == 0 || list[middle - 1] == val) {
+                max = middle - 1;
+            } else {
+                return middle;
+            }
+        }
+    }
+    return 0;
+}
